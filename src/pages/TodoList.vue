@@ -6,6 +6,9 @@
       <router-link class="btn btn-primary" to="/todos/add"
         >할일추가</router-link
       >
+      <button class="btn btn-primary ms-1" @click="fetchTodoList">
+        새로고침
+      </button>
     </div>
   </div>
   <div class="row">
@@ -22,4 +25,5 @@ import TodoItem from '@/components/TodoItem.vue';
 import { inject } from 'vue';
 
 const todoList = inject('todoList');
+const { fetchTodoList } = inject('actions');
 </script>

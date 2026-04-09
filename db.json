@@ -4,7 +4,7 @@
       "id": "1",
       "todo": "ES6학습",
       "desc": "설명1",
-      "done": false
+      "done": true
     },
     {
       "id": "2",
@@ -28,6 +28,11 @@
       "todo": "12",
       "desc": "12",
       "id": "NHxZ16O_nnw"
+    },
+    {
+      "todo": "d",
+      "desc": "d",
+      "id": "k8AvgQyX21E"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
