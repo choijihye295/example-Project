@@ -20,19 +20,38 @@
     },
     {
       "id": "4",
-      "todo": "야구경기 관람",
+      "todo": "야구경기 관람1",
       "desc": "설명4",
       "done": false
     },
     {
       "todo": "12",
       "desc": "12",
-      "id": "NHxZ16O_nnw"
+      "id": "NHxZ16O_nnw",
+      "done": false
     },
     {
       "todo": "d",
       "desc": "d",
       "id": "k8AvgQyX21E"
+    },
+    {
+      "todo": "s",
+      "desc": "s",
+      "id": "zmcYq7FlDEA",
+      "done": true
+    },
+    {
+      "todo": "ddd",
+      "desc": "ddd",
+      "id": "L3WBCO7yJyY",
+      "done": true
+    },
+    {
+      "todo": "1234",
+      "desc": "1",
+      "id": "Xg6k1fQv6B0",
+      "done": false
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

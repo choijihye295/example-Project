@@ -1,29 +1,29 @@
 <template>
-  <div class="row">
-    <!-- 부트스트랩 Flexbox -->
-    <div class="col p-3">
-      <!-- 자동너비 -->
+  <div>
+    <br />
+    <div class="mb-3">
       <router-link class="btn btn-primary" to="/todos/add"
-        >할일추가</router-link
+        >할일 추가</router-link
       >
-      <button class="btn btn-primary ms-1" @click="fetchTodoList">
-        새로고침
-      </button>
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <ul class="list-group">
-        <TodoItem v-for="todoItem in todoList" :todoItem="todoItem" />
-      </ul>
-    </div>
+    <ul class="list-group">
+      <TodoItem
+        v-for="todoItem in todoList"
+        :key="todoItem.id"
+        :todoItem="todoItem"
+      />
+    </ul>
+    <div class="mt-3">완료된 할일 수 : {{ doneCount }}</div>
   </div>
 </template>
 
 <script setup>
+import { computed } from 'vue';
+import { useTodoListStore } from '@/stores/todoList.js';
 import TodoItem from '@/components/TodoItem.vue';
-import { inject } from 'vue';
 
-const todoList = inject('todoList');
-const { fetchTodoList } = inject('actions');
+const todoListStore = useTodoListStore();
+
+const doneCount = computed(() => todoListStore.doneCount);
+const todoList = computed(() => todoListStore.todoList);
 </script>
