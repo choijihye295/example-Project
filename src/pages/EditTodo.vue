@@ -54,20 +54,23 @@ const todoList = inject('todoList');
 const { updateTodo } = inject('actions');
 const router = useRouter();
 const currentRoute = useRoute();
-const matchedTodoItem = todoList.value.find(
+
+const matchTodoItem = todoList.value.find(
   (item) => item.id === currentRoute.params.id,
 );
-if (!matchedTodoItem) {
+if (!matchTodoItem) {
   router.push('/todos');
 }
-const todoItem = reactive({ ...matchedTodoItem });
+const todoItem = reactive({ ...matchTodoItem });
+
 const updateTodoHandler = () => {
   let { todo } = todoItem;
   if (!todo || todo.trim() === '') {
     alert('할일은 반드시 입력해야 합니다');
     return;
   }
-  updateTodo({ ...todoItem });
-  router.push('/todos');
+  updateTodo({ ...todoItem }, () => {
+    router.push('/todos');
+  });
 };
 </script>
